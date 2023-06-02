@@ -1,0 +1,15 @@
+import math
+
+def calcular_momento_fuerza(punto_referencia, fuerzas):
+    momento_total = 0  # Inicializar el momento total como cero
+
+    for fuerza in fuerzas:
+        r = fuerza['punto_aplicacion'] - punto_referencia  # Calcular el vector de posición
+        magnitud = fuerza['magnitud']
+        angulo = math.radians(fuerza['angulo'])
+        momento = magnitud * r * math.sin(angulo)  # Calcular el momento de fuerza
+        momento_total += momento  # Sumar el momento al momento total
+
+    return momento_total
+momento_resultante = calcular_momento_fuerza(punto_referencia, fuerzas)
+print("Momento de fuerza resultante:", momento_resultante)
