@@ -1,0 +1,7 @@
+import math
+
+def calcular_momento(distancia, angulo, fuerza):
+# Convertir el ángulo a radianes
+    radianes = math.radians(angulo)  
+    momento = distancia * math.sin(radianes) * fuerza
+    return momento
